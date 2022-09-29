@@ -1,0 +1,39 @@
+@media(max-width:720px) {
+    main {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .box-buy {
+        order:0;
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 40px;
+        /* height: 535px; */
+    }
+    header {
+        padding: 30px 15px 20px 15px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    .form .input-field,
+    h3 {
+        font-size: 12px;
+    }
+    .form form label {
+        font-size: 10px
+    }
+    .form .input-field {
+        padding: 12px 10px 12px 40px;
+    }
+    .form .input-icons span {
+        padding: 10px 12px;
+    }
+    .form h2:first-child {
+        padding-bottom: 15px;
+    }
+    
+}

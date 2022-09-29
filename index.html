@@ -13,15 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
     <link rel="stylesheet" href="src/css/buttom-quantity.css">
 
-    <!-- <span class="material-symbols-outlined"> home</span>
-    <span class="material-symbols-outlined"> mail</span>
-    <span class="material-symbols-outlined"> call</span>
-    <span class="material-symbols-outlined"> location_city</span>
-    <span class="material-symbols-outlined"> public</span>
-    <span class="material-symbols-outlined"> markunread_mailbox</span>
-    <span class="material-symbols-outlined"> account_circle</span> -->
 </head>
 
 <body>
@@ -34,17 +28,11 @@
             <div class="item">
                 <img src="src/images/photo1.png" alt="vintage backbag">
                 <div class="info">
-                    <h3> Vintage Backbag</h3>
-                    <p class="new">$54.99</p>
-                    <p class="old">$94.99</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="src/images/photo2.png" alt="levi shoes">
-                <div class="info">
-                    <h3> Vintage Backbag</h3>
-                    <p class="new">$74.99</p>
-                    <p class="old">$124.99</p>
+                    <div class="info-item">
+                        <h3> Vintage Backbag</h3>
+                        <p class="new">$54.99</p>
+                        <p class="old"><del>$94.99</del></p>
+                    </div>
 
                     <div class="number-input">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><span
@@ -55,11 +43,33 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <p>Shipping</p>
-                <p>$19</p>
-                <p>Total</p>
-                <p>$148.98</p>
+            <div class="item">
+                <img src="src/images/photo2.png" alt="levi shoes">
+                <div class="info">
+                    <div class="info-item" >
+                        <h3> Levi Shoes</h3>
+                        <p class="new">$74.99</p>
+                        <p class="old"><del>$124.99</del></p>
+                    </div>
+
+                    <div class="number-input">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><span
+                                class="material-symbols-outlined"> remove</span></button>
+                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                            class="plus"><span class="material-symbols-outlined"> add</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="total-price">
+                <div class="lines">
+                    <p>Shipping</p>
+                    <p>$19</p>
+                </div>
+                <div class="lines">
+                    <p>Total</p>
+                    <p>$148.98</p>
+                </div>
             </div>
         </section>
 
@@ -69,49 +79,64 @@
                 <label for="email">E-mail</label>
                 <div class="input-icons">
                     <span class="material-symbols-outlined icon"> mail</span>
-                    <input type="email" id="email" placeholder="Enter your email..." class="input-field">
-                </div>
-                <label for="phone">E-mail</label>
-                <div class="input-icons">
-                    <span class="material-symbols-outlined icon"> call</span>
-                    <input type="tel" id="phone" placeholder="Enter your phone..." class="input-field">
+                    <input type="email" id="email" placeholder="Enter your email..." class="input-field" required>
                 </div>
 
-                <h2>Shipping address</h2>
+                <label for="phone">Phone</label>
+                <div class="input-icons">
+                    <span class="material-symbols-outlined icon"> call</span>
+                    <input type="tel" id="phone" placeholder="Enter your phone..." class="input-field" required>
+                </div>
+
+                <h2 class="title-address">Shipping address</h2>
                 <label for="full-name">Full name</label>
                 <div class="input-icons">
                     <span class="material-symbols-outlined icon"> account_circle</span>
                     <input type="text" id="full-name" placeholder="Your full name..." value="Rodney Cotton"
-                        class="input-field">
+                        class="input-field" required>
                 </div>
+                
                 <label for="address">Address </label>
                 <div class="input-icons">
                     <span class="material-symbols-outlined icon"> home</span>
-                    <input type="text" id="address" placeholder="Your address..." class="input-field">
+                    <input type="text" id="address" placeholder="Your address..." class="input-field" required>
                 </div>
                 <label for="city">City</label>
                 <div class="input-icons">
                     <span class="material-symbols-outlined icon"> location_city</span>
-                    <input type="text" id="city" placeholder="Your city..." class="input-field">
+                    <input type="text" id="city" placeholder="Your city..." class="input-field" required>
                 </div>
-                <label for="country">Country</label>
-                <div class="input-icons">
-                    <span class="material-symbols-outlined icon"> public</span>
-                    <select name="country" id="country" class="input-field">
-                        <option value=""></option>
-                        <option value="Brasil">Brasil</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Qatar">Qatar</option>
-                    </select>
+                <div class="flex-container">
+                    <div class="input-flex">
+                        <label for="country">Country</label> <br>
+                        <div class="input-icons">
+                            <span class="material-symbols-outlined icon"> public</span>
+                            <select name="country" id="country" class="input-field"  required>
+                                <option value="" disabled>Your country...</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Qatar">Qatar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-flex">
+                        <label for="postal-code">Postal code</label>
+                        <div class="input-icons ">
+                            <span class="material-symbols-outlined icon"> markunread_mailbox</span>
+                            <input type="text" id="postal-code" placeholder="Your postal code..." class="input-field" required>
+                        </div>
+                    </div>
                 </div>
-                <label for="postal-code">Postal code</label>
-                <div class="input-icons">
-                    <span class="material-symbols-outlined icon"> markunread_mailbox</span>
-                    <input type="text" id="postal-code" placeholder="Your postal code..." class="input-field">
+                
+
+                <div class="save">
+                    <input type="checkbox" name="save" id="save">
+                    <label for="save" >Save this information for next time.</label>
                 </div>
-                <input type="checkbox" name="save">
-                <label for="save">Save this information for next time.</label> <br>
-                <input type="submit" value="Continue">
+
+                <div class="btn-submit">
+                    <input type="submit" value="Continue">
+                </div>
             </form>
         </section>
     </main>

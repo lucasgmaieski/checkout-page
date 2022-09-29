@@ -3,6 +3,7 @@
     padding:0;
     box-sizing: border-box;
 }
+
 body {
     max-width: 950px;
     margin:0 auto;
@@ -126,6 +127,14 @@ h3 {
     border-radius: 12px;
     font-size: 16px;
 }
+.form .input-icons .input-field::placeholder {
+    color: #828282;
+}
+.form .input-field:focus{
+    border: #F2994A;
+    box-shadow: 0px 0px 5px 1px #F2994A;
+    outline: none;
+}
 /* ----------- */
 .form .title-address {
     padding: 50px 0 15px 0;
@@ -166,6 +175,13 @@ h3 {
     border: none;
 }
 
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
 
 footer {
     width: 100%;
